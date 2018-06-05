@@ -1,0 +1,40 @@
+{
+  "pages":[
+   "pages/Help/help",
+   "pages/Record/record",
+    "pages/logs/logs",
+    "pages/User/user"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Travel^_^ZYG",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color":"green",
+    "selectedColor":"deepGreen",
+    "position":"bottom",
+    "backgroundColor":"#eee",
+    "list":[
+      {
+        "pagePath":"pages/Help/help",
+        "text":"帮助",
+        "iconPath": "static/icon/help_normal.png",
+        "selectedIconPath": "static/icon/help_active.png"
+      },
+      {
+        "pagePath":"pages/Record/record",
+        "text":"记录",
+        "iconPath":"static/icon/record_normal.png",
+        "selectedIconPath": "static/icon/record_active.png"
+      },
+      {
+        "pagePath":"pages/User/user",
+        "text":"我的",
+        "iconPath": "static/icon/user_normal.png",
+        "selectedIconPath": "static/icon/user_active.png"
+      }
+    ]
+  }
+}
