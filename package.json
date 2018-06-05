@@ -1,0 +1,29 @@
+{
+  "name": "nice-bike",
+  "version": "1.0.0",
+  "description": "棒棒的单车-九组",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muxiaozi/nice-bike.git"
+  },
+  "author": "muxiaozi",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/muxiaozi/nice-bike/issues"
+  },
+  "homepage": "https://github.com/muxiaozi/nice-bike#readme",
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.6",
+    "nodemon": "^1.17.5"
+  }
+}
