@@ -1,3 +1,40 @@
+# 首页
+
+## 获取当前位置信息
+
+```
+GET /users/:user_id/position
+```
+
+**请求值**
+
+```
+{
+    longitude: Number,  //经度
+    latitude: Number    //纬度
+}
+```
+
+**返回值**
+
+返回附近区域小伙伴们上传的足迹，更具有社交属性，形成一种良性的竞争关系
+
+点击头像，可以看到小伙伴的上传具体内容（时间、内容、图片）
+
+```
+[
+    {
+        longitude: Number,      //经度
+        latitude: Number,       //纬度
+        content: String,        //内容
+        image_url: [String],    //图片URL
+        time: Date,             //上传日期
+        author: String          //上传者头像
+    },
+    ......
+]
+```
+
 # 个人中心
 
 ## 获取个人信息
