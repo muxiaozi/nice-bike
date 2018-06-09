@@ -1,55 +1,20 @@
-# 首页
+# 1. 棒棒的单车API文档
 
-## 获取当前位置信息
+## 1.1. 个人中心
 
-```
-GET /users/:user_id/position
-```
+### 1.1.1. 获取个人信息
 
-**请求值**
-
-```
-{
-    longitude: Number,  //经度
-    latitude: Number    //纬度
-}
-```
-
-**返回值**
-
-返回附近区域小伙伴们上传的足迹，更具有社交属性，形成一种良性的竞争关系
-
-点击头像，可以看到小伙伴的上传具体内容（时间、内容、图片）
-
-```
-[
-    {
-        longitude: Number,      //经度
-        latitude: Number,       //纬度
-        content: String,        //内容
-        image_url: [String],    //图片URL
-        time: Date,             //上传日期
-        author: String          //上传者头像
-    },
-    ......
-]
-```
-
-# 个人中心
-
-## 获取个人信息
+**接口URL**
 
 ```
 GET /users/:user_id
 ```
 
-例如`https://example.com/users/xxxxx`（其中的`xxxxx`代表**微信OpenId**）
-
 **返回值**
 
-* 成功
+* 成功 `200`
 
-```
+```javascript
 {
     wx_id: String,          //微信OpenId
     avatar_url: String,     //头像
@@ -59,25 +24,27 @@ GET /users/:user_id
 }
 ```
 
-* 失败
+* 失败 `400`
 
-```
+```javascript
 {
-    "message": "ID不存在"
+    message: String     //错误信息
 }
 ```
 
-## 添加个人信息
+### 1.1.2. 添加个人信息
+
+**接口URL**
 
 ```
 POST /users
 ```
 
-**请求体**
+**请求值**
 
 * `Content-Type` 为 `application/json`
 
-```
+```javascript
 {
     wx_id: String,          //微信OpenId
     avatar_url: String,     //头像
@@ -87,9 +54,9 @@ POST /users
 
 **返回值**
 
-* 成功
+* 成功 `200`
 
-```
+```javascript
 {
     wx_id: String,          //微信OpenId
     avatar_url: String,     //头像
@@ -99,15 +66,17 @@ POST /users
 }
 ```
 
-* 失败
+* 失败 `400`
 
-```
+```javascript
 {
-    "message": "参数不合法"
+    message: String     //错误信息
 }
 ```
 
-## 获取勋章列表
+### 1.1.3. 获取勋章列表
+
+**接口URL**
 
 ```
 GET /users/:user_id/badge
@@ -117,23 +86,25 @@ GET /users/:user_id/badge
 
 **返回值**
 
-* 成功
+* 成功 `200`
 
-```
+```javascript
 {
-    badges: [1, 2, 4, 5]  //有可能不连续，是因为用户没有领取勋章
+    badges: [Number]    //有可能不连续，是因为用户没有领取勋章
 }
 ```
 
-* 失败
+* 失败 `400`
 
-```
+```javascript
 {
-    message: "ID不存在"
+    message: String     //错误信息
 }
 ```
 
-## 兑换勋章
+### 1.1.4. 兑换勋章
+
+**接口URL**
 
 ```
 PUT /users/:user_id/badge
@@ -141,31 +112,262 @@ PUT /users/:user_id/badge
 
 **请求体**
 
-```
+```javascript
 {
-    badge: 2    //请求获取的称号code
+    badge: Number    //请求获取的称号code
 }
 ```
 
 **返回值**
 
-* 请求成功
-```
+* 请求成功 `200`
+
+```javascript
 {
-    badge: 2
+    badge: Number
 }
 ```
 
-* 请求失败
-```
+* 请求失败 `400`
+
+```javascript
 {
-    "message": "积分不足"
+    message: String     //错误信息
 }
 ```
 
-# 附表
+## 1.2. 记录
 
-**勋章**
+### 1.2.1. 获取当前位置信息
+
+**接口URL**
+
+```
+GET /users/:user_id/position/longitude/latitude
+```
+
+**返回值**
+
+返回附近区域小伙伴们上传的足迹，更具有社交属性，形成一种良性的竞争关系
+
+点击头像，可以看到小伙伴的上传具体内容（时间、内容、图片）
+
+* 成功 `200`
+
+```javascript
+[
+    {
+        longitude: Number,      //经度
+        latitude: Number,       //纬度
+        content: String,        //内容
+        image_url: [String],    //图片URL
+        time: Date,             //上传日期
+        avatar_url: String,     //上传者头像
+        author: String          //上传者姓名
+    }
+]
+```
+
+* 失败 `400`
+
+```javascript
+{
+    message: String     //错误信息
+}
+```
+
+### 1.2.2. 记录列表
+
+**接口描述**
+
+点击底部第二个按钮，进入记录列表，此时触发。
+
+**接口URL**
+
+```
+GET /users/:user_id/records
+```
+
+**返回值**
+
+* 成功 `200`
+
+```javascript
+{
+    maintain: [             //维护列表
+        {
+            id: String,     //该条维护记录的ID
+            images: String, //首图 上传图片的第一张
+            remark: String, //备注
+            time: Date,     //时间
+            place: String,  //地点
+        }
+    ],
+    integral: [             //积分列表
+        {
+            id: String,     //该条积分记录的ID
+            images: String, //图片
+            grade: Number,  //分数
+            time: Date,     //时间
+            remark: String  //具体内容
+        }
+    ]
+}
+```
+
+* 失败 `400`
+
+```javascript
+{
+    messages: String        //错误信息
+}
+```
+
+### 1.2.3. 维护详情
+
+**接口描述**
+
+ 进入记录界面，默认是维护列表，点击每一项时触发。
+
+**接口URL**
+
+```
+GET /users/:user_id/records/:record_id
+```
+
+**返回值**
+
+```javascript
+{
+    id: String,         //该条维护记录的ID
+    images: [String],   //上传的所有图片
+    remark: String,     //备注
+    time: Date,         //时间
+    place: String,      //地点名称
+    position: {
+        longitude: Number,  //经度
+        latitude: Number    //纬度
+    }
+}
+```
+
+### 1.2.4. 上传用户记录
+
+**接口描述**
+
+点击首页的记录按钮，填写完后，点击保存按钮时触发。
+
+**接口URL**
+
+```
+POST /users/:user_id/records
+```
+
+**请求值**
+
+```javascript
+{
+    position: {
+        longitude: Number,  //经度
+        latitude: Number    //纬度
+    },
+    place: String,          //地点名称
+    question: String,       //问题选项
+    remark: String,         //备注
+    images: [String],       //图片
+}
+```
+
+**返回值**
+
+* 成功 `200`
+
+```javascript
+{
+    grade: Number,      //保存成功后给多少积分
+    ads: [String]       //其他广告
+}
+```
+
+* 失败 `400`
+
+```javascript
+{
+    message: String,    //请求失败的描述
+}
+```
+
+## 1.3. 帮助
+
+### 1.3.1. 帮助列表
+
+**接口描述**
+
+点击帮助进入帮助列表，此时触发。
+
+**接口URL**
+
+``` 
+GET /users/:user_id/help
+```
+
+**返回值**
+
+* 成功 `200`
+
+```javascript
+[
+    {
+        id: String,     //帮助id
+        title: String   //该条帮助的题目
+    }
+]
+```
+
+* 失败 `400`
+
+```javascript
+{
+    message: String     //错误信息
+}
+```
+
+### 1.3.2. 帮助详情
+
+**接口描述**
+
+进入帮助列表，点击每一项时触发。
+
+**接口URL**
+
+```
+GET /users/:user_id/help/:help_id
+```
+
+**返回值**
+
+* 成功 `200`
+
+```javascript
+{
+    id: String,         //帮助ID
+    title: String,      //帮助题目
+    content: String,    //解决办法 文字描述
+    images: [String],   //如果帮助有图片形式的展示的话，这里放图片
+}
+```
+
+* 失败 `400`
+
+```javascript
+{
+    message: String     //错误信息
+}
+```
+
+## 1.4. 附表
+
+### 1.4.1. 勋章
 
 | code | 称号 | 图标URL | 所需最少积分 |
 |------|------|--------|-------------|
@@ -176,180 +378,3 @@ PUT /users/:user_id/badge
 | 4 | 四级棒棒达人 | xxx | 25 |
 | 5 | 五级棒棒达人 | xxx | 50 |
 | 6 | 六级棒棒达人 | xxx | 99 |
-
-# 帮助
-
-### 1. 帮助列表---请求接口
-
-- 接口描述   
-
-点击帮助进入帮助列表，此时触发。
-
-- 接口URL
-
-```
-GET /users/:user_id/helpList
-```
-
-- 传给后台的数据及其格式
-
-``` 
-userId:12,//当前登录用户ID，即微信号
-```
-
-- 后台返回的数据及其格式
-
-```
-{
-    list:[
-        {
-            id:"",//该条帮助id
-            tit:"",//该条帮助的题目
-        }
-    ],//帮助列表 
-    des:'',//请求失败的描述
-    result:1,//请求成功或失败的标志，0为失败 1为成功
-}
-```
-
-### 2. 帮助详情---请求接口
-- 接口描述   
-
- 进入帮助列表，点击每一项时触发。
-
-- 接口URL
-
-```
-GET /users/:user_id/helpDetail
-```
-
-- 传给后台的数据及其格式
-
-```
-id:1, //帮助ID
-userId:12,//当前登录用户ID，即微信号
-```
-
-- 后台返回的数据及其格式
-
-```
-{
-    tit:"如何使用小程序",//帮助题目
-    step:"第一步 打开微信，第二步 打开扫一扫， 第三步 扫一扫二维码进入",//解决办法 文字描述
-    imgs:['',''],//如果帮助有图片形式的展示的话，这里放图片
-    des:'',//请求失败的描述
-    result:1,//请求成功或失败的标志，0为失败 1为成功
-}
-```
-
-
-# 记录
-
-### 1. 记录列表---请求接口
-
-- 接口描述   
-
-点击底部第二个按钮，进入记录列表，此时触发。
-
-- 接口URL
-
-```
-GET /users/:user_id/record
-```
-
-- 传给后台的数据及其格式
-
-``` 
-userId:12,//当前登录用户ID，即微信号
-```
-
-- 后台返回的数据及其格式
-
-```
-{
-    maintain:[ 
-        {
-            id:"",//该条维护记录的ID
-            img:'',//首图 上传图片的第一张 
-            remark:"",//备注
-            time:"",//时间
-            place:"",//地点
-        }
-    ],//维护列表
-    integral:[
-        {
-            id:"",//该条积分记录的ID
-            img:'',//地址
-            grade:"",//分数
-            time:"",//时间 
-        }
-    ],//积分列表
-    des:'',//请求失败的描述
-    result:1,//请求成功或失败的标志，0为失败 1为成功
-}
-```
-
-### 2. 维护详情---请求接口
-- 接口描述   
-
- 进入记录界面，默认是维护列表，点击每一项时触发。
-
-- 接口URL
-
-```
-GET /users/:user_id/maintainRecord
-```
-
-- 传给后台的数据及其格式
-
-```
-id:1, //维护ID
-userId:12,//当前登录用户ID，即微信号
-```
-
-- 后台返回的数据及其格式
-
-```
-{
-     id:"",//该条维护记录的ID
-    img:['','',''],// 上传的所有图片 
-    remark:"",//备注
-    time:"",//时间
-    place:"",//地点
-}
-```
-
-# 首页记录
-
-### 1. 用户记录---保存接口
-
-- 接口描述   
-
-点击 首页的记录按钮， 填写完后，点击保存按钮时 触发。
-
-- 接口URL
-
-```
-POST /users/:user_id/record
-```
-
-- 传给后台的数据及其格式
-
-``` 
-place：'北京市吧啦吧啦'，//地点
-remark:"",//备注
-ques:"",//问题选项
-img:[‘’，‘’],//图片
-userId:12,//当前登录用户ID，即微信号
-```
-
-- 后台返回的数据及其格式
-
-```
-{
-    grade:'',//保存成功后给多少积分
-    ads;[],//其他广告
-    des:'',//请求失败的描述
-    result:1,//请求成功或失败的标志，0为失败 1为成功
-}
-```
