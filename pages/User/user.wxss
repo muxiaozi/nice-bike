@@ -1,0 +1,57 @@
+ 
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.accumulate-points {
+  margin-top: 20px;
+  line-height: 32px;
+}
+.int-img{
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+.int-text{
+  height: 32px;
+  line-height: 32px;
+  display: inline-block;
+  background: red;
+}
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin: 50px;
+}
+.flex-view-item{
+  flex-grow: 0;
+  flex-basis: 64px;
+  margin: 10px;
+  background: pink;
+  padding: 20px;
+}
+.img{
+  width: 64px; 
+  height: 64px;
+  top: 10px;
+}
+.text{
+  color:blueviolet;
+  font-size: 15px;
+  text-align: center;
+}

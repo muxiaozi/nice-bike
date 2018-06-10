@@ -1,5 +1,23 @@
 <view class="container">
   <view class="userinfo">
-    <text class="user-motto">我的</text> 
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="accumulate-points">
+    <image class='int-img' src='../../static/user_icon/int.png'></image>
+    <view class='int-text'>{{integral}}积分</view>
+  </view>
+  <view class="flex-row">
+    <view class="flex-view-item" bindtap='goRecord' data-userId='{{wx_id}}' data-index='0'>
+      <image class='img' src='../../static/user_icon/record.png'></image>
+      <text class='text'>我的记录</text>
+    </view>
+    <view class="flex-view-item" bindtap='goRecord' data-userId='{{wx_id}}' data-index='1'>
+     <image class='img' src='../../static/user_icon/medal.png'></image>
+      <text class='text'>我的勋章</text>
+    </view> 
   </view>
 </view>

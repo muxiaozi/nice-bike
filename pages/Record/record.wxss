@@ -1,29 +1,38 @@
-.map_container{
-  position: absolute;
-  top: 0;
-  bottom: 10px;
-  left: 0;
-  right: 0;
+.record-switch{
+  display: flex;
+  justify-content: center;
 }
-.map{
+button{
+  flex-flow: 1;
+  padding: 0;
+  margin:0;
   width: 100%;
-  height: 100%;
 }
-.map_text{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0px;
-  height: 80px;
-  background: #fff;
-  padding: 0 15px;
+
+.btn-normal{
+  background: gray;
+}
+.btn-check{
+  background: red;
+}
+.ui-recoord-item{
+   display: flex;
+   justify-content: center;
+   border:1px solid gray;
+  padding: 10px;
+  margin: 2px 0;
+}
+.ui-integral-item{
+  display: flex;
+  justify-content: center;
+  border:1px solid gray;
+  padding: 10px;
+   margin: 2px 0;
+}
+image{
+  width:45px;
+  height:45px;
 }
 text{
-  margin: 5px 0;
-  display: block;
-  font-size:12px;
-}
-.h1{
-  margin: 15px 0;
-  font-size:15px;
+  margin: 0 20px;
 }

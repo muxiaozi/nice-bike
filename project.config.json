@@ -1,16 +1,19 @@
 {
-	"description": "项目配置文件。",
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
+	"description": "项目配置文件",
+  "packOptions": {  
+    "ignore":[]  
+  },
+	"setting": { 
+		"urlCheck": true, 
+		"es6": true, 
+		"postcss": true, 
+		"minified": true, 
 		"newFeature": true
 	},
-	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
-	"appid": "wxc55405d40b934b51",
-	"projectname": "nice-bike-pre",
+	"compileType": "miniprogram", 
+	"libVersion": "1.9.94", 
+	"appid": "wxc55405d40b934b51", 
+	"projectname": "nice-bike-pre", 
 	"isGameTourist": false,
 	"condition": {
 		"search": {

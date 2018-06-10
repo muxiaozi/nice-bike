@@ -1,21 +1,78 @@
-//index.js
 //获取应用实例
 const app = getApp()
 
 Page({
   data: {
-    motto: 'The world is so big, yet I owe it a visit.',
+    list: [
+      {
+        id: '1',     //帮助id
+        title: '为什么加入公益单车?'
+      },
+      {
+        id: '2',     //帮助id
+        title: '如何使用公益单车小程序?'
+      },
+      {
+        id: '3',     //帮助id
+        title: '如何获得公益单车的勋章奖励?'
+      },
+    ],
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function (event) {
+    console.log('--event--', event)
     wx.navigateTo({
-      url: '../Home/home'
+      url: '../HelpDetail/helpDetail',
+    })
+      wx.request({
+      url: "http://wxcms.com/getOne",
+      //这里是 
+      id:event.currentTarget.dataset.id,
+      method: "GET",
+      header: {
+        'content-type': 'application/json'
+      },
+      fail: function (msg) {
+
+      },
+      success: function (msg) {
+        that.setData({
+          info: msg.data,
+        })
+      },
+      complete: function () {
+
+      }
     })
   },
   onLoad: function () {
+    var that = this;
+    wx.request({
+      url: "http://wxcms.com/getOne",
+      //这里是 
+      data: {
+         
+      },
+      method:"GET",
+      header: {
+        'content-type': 'application/json'
+      },
+      fail:function(msg){
+
+      },
+      success: function (msg) {
+        that.setData({
+          info: msg.data,
+        })
+      },
+      complete:function(){
+
+      }
+    })
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

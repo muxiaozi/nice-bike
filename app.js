@@ -1,5 +1,6 @@
 //app.js
 App({
+  //onLanuch 当小程序初始化完成时，会触发，全局只触发一次
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -33,7 +34,24 @@ App({
       }
     })
   },
+  //onShow 当小程序启动，或从后台进入前台展示，触发
+  //前台 后台： 点击左上角关闭小程序 或者 按Home键退出微信时，此时小程序不是真正的销毁，
+  //而是进入后台模式运行，当再次打开，是进入前台运行而不是重新启动
+  onShow:function(){
+
+  },
+  //onHide 当小程序从前台进入后台 触发
+  onHide: function () {
+
+  },
+  //onError 当小程序发生脚本错误，或者API调用失败时，触发 饼带上错误信息
+  onError: function () {
+
+  },
+  //用来存放一些全局变量，比如说统一的远程接口地址。这些全局变量在pages中可以获取到
   globalData: {
-    userInfo: null
+    userInfo: null,
+    remoteUrl:"",//远程接口
+    shareTicket:false
   }
 })
