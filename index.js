@@ -1,23 +1,27 @@
+const router = require('./src/route/router');
+const exception = require('./src/middleware/exception');
+const auth = require('./src/middleware/auth');
+const bodyparser = require('koa-bodyparser');
+// const mongodb = require('../model/db');
 const Koa = require('koa');
-let config = require('./config/common');
-// config = config[process.env.NODE_ENV || 'development']
-config = config['production'];
-// const app = new Koa();
+const app = new Koa();
 
-// app.use((ctx) => {
-//     ctx.body = 'Nice bike';
-// })
+//解析请求体
+app.use(bodyparser());
 
-// app.listen(8989);
-const mysql = require('mysql');
+//拦截错误
+app.use(exception);
 
-let conn = mysql.createConnection(config.mysql);
+//授权管理
+app.use(auth);
 
-conn.connect((err) => {
-    if(err) console.error('Database connect fail:', err)
+//路由解析
+app.use(router.routes())
+    .use(router.allowedMethods());
+
+//服务器错误处理
+app.on('error', (err) => {
+    console.error('服务器发生错误', err);
 })
 
-conn.query('select * from sys_menu', (err, res) => {
-    if(err) console.error('Database connect fail:', err)
-    console.log(res)
-})
+app.listen(8989);
