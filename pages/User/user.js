@@ -3,6 +3,32 @@ const app = getApp()
 
 Page({
   data: {
+    pageData:[
+      {
+        name:'我的勋章',
+        img:'../../static/user_icon/1.png',
+        cls:'user-item-normal'
+      },
+      {
+        name: '我的记录',
+        img: '../../static/user_icon/2.png',
+        cls: 'user-item-special'
+      },
+      {
+        name: '客服中心',
+        img: '../../static/user_icon/3.png',
+        cls: 'user-item-normal'
+      },
+      {
+        name: '关于我们',
+        img: '../../static/user_icon/4.png',
+        cls: 'user-item-normal'
+      },
+      {
+        name: '意见反馈',
+        img: '../../static/user_icon/5.png',
+        cls: 'user-item-normal'
+      }],
     wx_id: '12345678',          //微信OpenId
     avatar_url: '',     //头像
     name: 'weiyastory',           //昵称
