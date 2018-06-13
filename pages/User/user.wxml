@@ -9,7 +9,6 @@
     </view>
     </block>
   </view>
-
   <view wx:for="{{pageData}}" wx:for-index="idx" wx:key='idx' wx:for-item="item" >
     <view class="{{item.cls}}" bindtap='goPage' data-userId='{{wx_id}}'>
       <image class='img' src='{{item.img}}'></image>
