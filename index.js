@@ -2,7 +2,7 @@ const router = require('./src/route/router');
 const exception = require('./src/middleware/exception');
 const auth = require('./src/middleware/auth');
 const bodyparser = require('koa-bodyparser');
-// const mongodb = require('../model/db');
+const mongodb = require('./src/model/db');
 const Koa = require('koa');
 const app = new Koa();
 
