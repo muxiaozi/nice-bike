@@ -1,3 +1,7 @@
+.record-container{
+  background: #ededed;
+  height:100%;
+}
 .record-switch{
   display: flex;
   justify-content: center;
@@ -5,34 +9,48 @@
 button{
   flex-flow: 1;
   padding: 0;
-  margin:0;
   width: 100%;
+  margin: 0 0 30rpx 0 ;
+  background: white;
+  box-sizing: border-box;
 }
 
-.btn-normal{
-  background: gray;
+.btn-normal{ 
+  color: black;  
 }
 .btn-check{
-  background: red;
+  color: #0Ae3B4; 
+  border: 1px solid #0Ae3B4;
 }
 .ui-recoord-item{
-   display: flex;
-   justify-content: center;
-   border:1px solid gray;
-  padding: 10px;
-  margin: 2px 0;
+  display: flex;
+  justify-content: center; 
+  padding: 20rpx;
+  margin:0 20rpx 30rpx ;
+  background: white;
+  border-radius:5px;
 }
 .ui-integral-item{
   display: flex;
-  justify-content: center;
-  border:1px solid gray;
-  padding: 10px;
-   margin: 2px 0;
+  justify-content: center; 
+  padding: 20rpx;
+  margin:0 20rpx 30rpx ;
+  background: white;
+  border-radius:5px;
 }
 image{
-  width:45px;
-  height:45px;
+  width: 148rpx;
+  height:148rpx;
+  flex-flow: 0;
 }
-text{
-  margin: 0 20px;
+.record-item-place{
+ flex-grow: 1;
+ position: relative;
+}
+.time{
+  position: absolute;
+  bottom:0;
+  left:0;
+  color: #eee;
+  font-size: 15px;
 }

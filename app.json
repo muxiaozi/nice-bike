@@ -1,15 +1,18 @@
 {
   "pages":[
     "pages/User/user",
-   "pages/Help/help",
+    "pages/Help/help",
     "pages/Record/record", 
     "pages/RecordDetail/recordDetail",    
     "pages/logs/logs",
     "pages/Map/map",
+    "pages/AboutUs/aboutUs",
+    "pages/CustomerCenter/customerCenterr",
+    "pages/FeedBack/feedBack",
     "pages/HelpDetail/helpDetail"
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
+  "window":{ 
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "PUBLC BICYCLE",
     "navigationBarTextStyle":"black",
@@ -17,8 +20,8 @@
     "onReachBottomDistance":10
   },
   "tabBar":{
-    "color":"green",
-    "selectedColor":"deepGreen",
+    "color":"#999",
+    "selectedColor":"#00B38a",
     "position":"bottom",
     "backgroundColor":"#eee",
     "list":[

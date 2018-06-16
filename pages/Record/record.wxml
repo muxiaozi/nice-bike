@@ -7,8 +7,11 @@
     <view wx:for="{{maintain}}" wx:for-index="idx" wx:key='idx' wx:for-item="item" >
         <view class='ui-recoord-item' bindtap='goRecordDetail' data-id="{{item.id}}">
           <image src='{{item.images}}'></image>
-          <text>{{item.place}}</text>
-          <text>{{item.time}}</text>
+          <view class='record-item-place'>
+            <text class='place'>{{item.place}}</text>
+            <text class='time'>{{item.time}}</text>
+          </view>
+          
         </view>
       </view>
   </view>

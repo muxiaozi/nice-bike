@@ -36,10 +36,16 @@ Page({
     integral: 10       //积分 
   },
   //事件处理函数
-  goRecord: function (event) { 
-    console.log('--goRecord--event.current.dataset.userId--', event.currentTarget.dataset.userid)
+  goOtherPage: function (event) {  
+    var dataSet = event.currentTarget.dataset,
+      whichPage = {
+        0:"../Record/record?index=0",
+        1:"../Record/record?index=1",
+        2:"../CustomerCenter/customerCenter",
+        3:"../AboutUs/aboutUs",
+        4:"../FeedBack/feedBack"};
     wx.navigateTo({
-      url: '../Record/record?id=' + event.currentTarget.dataset.userid + '&index=' + event.currentTarget.dataset.index,
+      url: whichPage[dataSet.index]+"?userId=" + dataSet.userid ,
     })
   },
    
