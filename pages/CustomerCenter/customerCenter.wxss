@@ -1,0 +1,9 @@
+.ui-help-list{
+  background: pink;
+  padding: 10px
+}
+.ui-help-item{
+  background: salmon;
+  border:2px solid seashell;
+  margin:10px; 
+}
