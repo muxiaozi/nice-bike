@@ -1,6 +1,6 @@
 const UserModel = require('../model/user.model');
 
-class User {
+module.exports = class User {
     /**
      * 添加用户
      */
@@ -93,6 +93,23 @@ class User {
         }
         await next();
     }
-}
 
-module.exports = User;
+    static async aroundPosition(ctx, next){
+
+    }
+
+    static async getRecords(ctx, next){
+
+    }
+
+    static async getRecord(ctx, next){
+
+    }
+
+    /**
+     * 上传记录
+     */
+    static async addRecord(ctx, next){
+
+    }
+}
