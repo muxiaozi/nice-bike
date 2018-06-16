@@ -3,7 +3,8 @@ const User = require('../controller/user');
 const Help = require('../controller/help');
 
 router
-    .get('/users/:user_id', User.find)
+    .get('/users', User.find)
+    .get('/users/:user_id', User.findId)
     .post('/users', User.add)
     .delete('/users/:user_id', User.delete)
     .put('/users/:user_id', User.update)
