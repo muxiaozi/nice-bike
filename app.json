@@ -3,13 +3,14 @@
     "pages/User/user",
     "pages/Help/help",
     "pages/Record/record", 
-    "pages/RecordDetail/recordDetail",    
+    "pages/Record/recordDetail",    
     "pages/logs/logs",
     "pages/Map/map",
     "pages/AboutUs/aboutUs",
-    "pages/CustomerCenter/customerCenterr",
+    "pages/AboutUs/detail",
+    "pages/CustomerCenter/customerCenter",
     "pages/FeedBack/feedBack",
-    "pages/HelpDetail/helpDetail"
+    "pages/Medal/medal"
   ],
   "window":{ 
     "backgroundTextStyle": "dark",

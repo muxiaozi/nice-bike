@@ -1,0 +1,65 @@
+.medal-container{
+  background: #fff;
+  height:100%;
+  color: #666;
+  font-size:16px;
+}
+.medal-top{
+  height: 140rpx;
+  line-height: 140rpx;
+  background: #0de4ab;
+  color: #fff;
+  text-align: center;
+  border-radius: 0 0 35% 35%;
+  box-shadow: 5rpx 5rpx 35rpx 15rpx #999;
+}
+.ui-medal-item{
+  border-bottom: 1px solid #f1f1f1;
+  height: 140rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.ui-medal-idx{
+  flex-grow: 0;
+  margin: 0 30rpx;
+}
+image{
+  flex-grow: 0;
+  width: 160rpx;
+  height: 140rpx;
+  margin-right: 80rpx;
+}
+.ui-medal-content{
+  flex-grow: 1;
+}
+.ui-medal-grade{
+  flex-grow: 0;
+  margin-right: 25rpx;
+}
+.ui-medal-hr{
+  width:100%;
+  height: 30rpx;
+  background: linear-gradient(#fff 0%, #dedede 100%);
+}
+.ui-medal-btn{
+  width: 478rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 45rpx auto;
+  background: linear-gradient(#05e1c9 0%, #15e68b 100%);
+  text-align: center;
+  color: #fff;
+  border-radius:10rpx;
+}
+.ui-medal-pop{
+  width: 436rpx;
+}
+.ui-medal-pop-view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pop-image{
+  margin: 0;
+}

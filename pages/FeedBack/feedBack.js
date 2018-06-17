@@ -3,51 +3,23 @@ const app = getApp()
 
 Page({
   data: {
-    list: [
-      {
-        id: '1',     //帮助id
-        title: '为什么加入公益单车?'
-      },
-      {
-        id: '2',     //帮助id
-        title: '如何使用公益单车小程序?'
-      },
-      {
-        id: '3',     //帮助id
-        title: '如何获得公益单车的勋章奖励?'
-      },
-    ],
+    name:"",
+    tel:"",
+    content:"",
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
-  bindViewTap: function (event) {
-    console.log('--event--', event)
-    wx.navigateTo({
-      url: '../HelpDetail/helpDetail',
-    })
-      wx.request({
-      url: "http://wxcms.com/getOne",
-      //这里是 
-      id:event.currentTarget.dataset.id,
-      method: "GET",
-      header: {
-        'content-type': 'application/json'
-      },
-      fail: function (msg) {
-
-      },
-      success: function (msg) {
-        that.setData({
-          info: msg.data,
-        })
-      },
-      complete: function () {
-
-      }
-    })
+  getFormData: function (event){
+    console.log('==detail---',event.detail)
+    this.setData({
+      name: event.detail.value.name,
+      tel:event.detail.value.tel,
+      content: event.detail.value.content
+    });
   },
+  
   onLoad: function () {
     var that = this;
     wx.request({

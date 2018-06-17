@@ -25,7 +25,7 @@ Page({
   bindViewTap: function (event) {
     console.log('--event--', event)
     wx.navigateTo({
-      url: '../HelpDetail/helpDetail',
+      url: '../AboutUs/detail',
     })
       wx.request({
       url: "http://wxcms.com/getOne",

@@ -6,21 +6,29 @@
   <view wx:if="{{!index }}">
     <view wx:for="{{maintain}}" wx:for-index="idx" wx:key='idx' wx:for-item="item" >
         <view class='ui-recoord-item' bindtap='goRecordDetail' data-id="{{item.id}}">
-          <image src='{{item.images}}'></image>
+          <view class='item-image-view'>
+            <image src='{{item.images}}'></image>
+          </view>
           <view class='record-item-place'>
             <text class='place'>{{item.place}}</text>
             <text class='time'>{{item.time}}</text>
           </view>
-          
         </view>
       </view>
   </view>
   <view wx:elif="{{!!index}}"> 
     <view wx:for="{{integral}}" wx:for-index="idx" wx:key='idx' wx:for-item="item" >
         <view class='ui-integral-item' bindtap='goAccumulateDetail' data-id="{{item.id}}">
-         <image src='{{item.images}}'></image>
-          <text>{{item.time}}</text>
-          <text>{{item.grade}}</text>
+         <view class='item-image-view'>
+            <image src='{{item.images}}'></image>
+          </view>
+          <view class='record-item-place'>
+            <text class='place'>{{item.remark}}</text>
+            <text class='time'>{{item.time}}</text>
+          </view>
+          <view class='integral-view'>
+            <view class='integral-item'>+{{item.grade}}</view>
+          </view>
         </view>
       </view>
   </view> 

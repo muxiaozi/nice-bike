@@ -1,9 +1,19 @@
-.ui-help-list{
-  background: pink;
-  padding: 10px
+.ui-about-us{
+  height: 100%;
 }
-.ui-help-item{
-  background: salmon;
-  border:2px solid seashell;
-  margin:10px; 
+.ui-about-us-item{
+  height: 126rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  font-size: 30rpx;
+  border-bottom: 1px solid #EDEDED;
+}
+.ui-about-us-item-view{
+  flex-grow: 1;
+}
+.ui-about-us-item-arrow{
+  width: 37rpx;
+  height: 37rpx;
+  flex-grow: 0;
 }

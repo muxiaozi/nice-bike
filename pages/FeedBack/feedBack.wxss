@@ -1,9 +1,31 @@
-.ui-help-list{
-  background: pink;
-  padding: 10px
+.ui-feedback{
+ background: #ededed;
+ height:100%;
 }
-.ui-help-item{
-  background: salmon;
-  border:2px solid seashell;
-  margin:10px; 
+form{
+  background: #ededed;
+  padding: 30rpx;
+  font-size: 16px;
+}
+input{
+  height: 80rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding-left: 5rpx;
+}
+textarea{
+  height: 400rpx;
+  background: #fff;
+  width: 100%;
+  padding: 5rpx;
+}
+button{
+  background: #05e1c9;
+  text-align: center;
+  color: #fff;
+  border-radius:10rpx;
+  width: 478rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 45rpx auto;
 }

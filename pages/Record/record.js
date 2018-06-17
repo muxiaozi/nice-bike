@@ -35,7 +35,7 @@ Page({
         images: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528650881778&di=6f56415015072f3473a56e42a7768237&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201502%2F01%2F20150201190536_ruyLX.thumb.700_0.jpeg', //图片
         grade: 20,  //分数
         time: '2018-06-10',     //时间
-        remark: '这是我第一条积分'  //具体内容
+        remark: '这是我第2条积分'  //具体内容
       }
     ]
   }, 
@@ -63,7 +63,7 @@ Page({
    goRecordDetail:function(event){
      console.log('==goRecordDetail==event.currentTarget.dataset.id', event.currentTarget.dataset.id,)
      wx.navigateTo({
-       url: '../RecordDetail/recordDetail?id=' + event.currentTarget.dataset.id,
+       url: '../Record/recordDetail?id=' + event.currentTarget.dataset.id,
      })
    },
    goAccumulateDetail: function (event) {

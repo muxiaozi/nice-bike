@@ -39,8 +39,8 @@ Page({
   goOtherPage: function (event) {  
     var dataSet = event.currentTarget.dataset,
       whichPage = {
-        0:"../Record/record?index=0",
-        1:"../Record/record?index=1",
+        0:"../Medal/medal",
+        1:"../Record/record?index=0",
         2:"../CustomerCenter/customerCenter",
         3:"../AboutUs/aboutUs",
         4:"../FeedBack/feedBack"};

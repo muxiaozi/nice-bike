@@ -1,0 +1,21 @@
+<view class="medal-container">
+  <view class='medal-top'>积分规则：记录1次=1分，帮助1次=2分</view>
+  <view wx:for="{{list}}" wx:for-index="idx" wx:key='idx' wx:for-item="item" >
+    <view class='ui-medal-item' >
+      <view class='ui-medal-idx'>{{idx+1}}.</view>
+      <image src='{{item.img}}'></image>
+      <view class='ui-medal-content'>{{item.content}}</view>
+      <view class='ui-medal-grade'>{{item.grade}}</view>
+    </view>
+  </view>
+  <view class='ui-medal-hr'></view>
+  <view class='ui-medal-btn' bindtap='showMedalPop'>兑换勋章</view>
+  <modal class='ui-medal-pop' confirm-text="返回" bindconfirm="backMedal" hidden="{{hiddenmodal}}" no-cancel='true'>
+    <view class='ui-medal-pop-view'>
+      <view>恭喜您已获得：</view>
+      <image class='pop-image' src='{{list[whichGrade].img}}'/>
+      <view>{{list[whichGrade].content}}</view>
+    </view>    
+</modal>  
+</view>
+ 
