@@ -5,62 +5,54 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    list:[
+      [
+        {
+          tit: "乱停乱放",
+          engTit: "Disorderly parking place",
+          img: '../../static/help_icon/1.jpg',
+          cls:"ui-help-item-view-1"
+        },
+        {
+          tit: "二维码损坏",
+          engTit: "Two-dimensional code damage",
+          img: '../../static/help_icon/2.jpg',
+          cls: "ui-help-item-view"
+        },
+      ],
+      [
+        {
+          tit: "车子损坏",
+          engTit: "Bicycle damage",
+          img: '../../static/help_icon/3.jpg',
+          cls: "ui-help-item-view-1"
+        },
+        {
+          tit: "骑回市中心",
+          engTit: "Go back to the center of the city",
+          img: '../../static/help_icon/4.jpg',
+          cls: "ui-help-item-view"
+        },
+      ],
+      [
+        {
+          tit: "解救小车",
+          engTit: "Rescue bicycle",
+          img: '../../static/help_icon/5.jpg',
+          cls: "ui-help-item-view-1"
+        },
+        {
+          tit: "其他问题",
+          engTit: "Other questions",
+          img: '../../static/help_icon/6.jpg',
+          cls: "ui-help-item-view"
+        },
+      ]     
+    ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  goPage:function(event){
+    wx.navigateTo({
+      url: "../Help/detail",
+    })
   }
 })

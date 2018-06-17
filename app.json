@@ -1,11 +1,13 @@
 {
   "pages":[
-    "pages/User/user",
-    "pages/Help/help",
-    "pages/Record/record", 
-    "pages/Record/recordDetail",    
-    "pages/logs/logs",
-    "pages/Map/map",
+    "pages/DoRecord/map",
+    "pages/DoRecord/doRecord",
+    "pages/DoRecord/doRecordOk",
+    "pages/RecordList/record",
+    "pages/Help/detail",
+    "pages/Help/help",    
+    "pages/User/user",       
+    "pages/RecordList/recordDetail",
     "pages/AboutUs/aboutUs",
     "pages/AboutUs/detail",
     "pages/CustomerCenter/customerCenter",
@@ -15,7 +17,7 @@
   "window":{ 
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "PUBLC BICYCLE",
+    "navigationBarTitleText": "公益单车",
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh": true,
     "onReachBottomDistance":10
@@ -24,7 +26,8 @@
     "color":"#999",
     "selectedColor":"#00B38a",
     "position":"bottom",
-    "backgroundColor":"#eee",
+    "backgroundColor":"#fff",
+    "borderStyle":"white",
     "list":[
       {
         "pagePath":"pages/Help/help",
@@ -33,7 +36,7 @@
         "selectedIconPath": "static/icon/help_active.png"
       },
       {
-        "pagePath":"pages/Map/map",
+        "pagePath":"pages/DoRecord/map",
         "text":"记录",
         "iconPath":"static/icon/record_normal.png",
         "selectedIconPath": "static/icon/record_active.png"

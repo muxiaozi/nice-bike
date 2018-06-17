@@ -1,0 +1,41 @@
+.ui-help{
+ background: #ededed;
+ height:100%;
+  padding: 20rpx;
+}
+.ui-help-item{
+ display: flex;
+}
+.ui-help-item-view, .ui-help-item-view-1{
+ flex-grow: 0;
+ background: #000;
+ width: 336rpx;
+ height:330rpx;
+ border-radius: 5%; 
+ margin-bottom: 20rpx;
+ position: relative;
+ text-align: center;
+}
+.ui-help-item-view-1{
+ margin-right: 20rpx;
+}
+image{
+  width: 336rpx;
+  height:330rpx;
+  opacity:0.4; 
+  filter: alpha(opacity=40); 
+  border-radius: 5%;  
+}
+.ui-help-tit, .ui-help-eng-tit{
+  color: #fff;
+  position: absolute;
+  top: 35%;
+  text-align: center;
+  left: 50%;
+  transform: translate( -50%, 0);
+  width: 100%;
+}
+.ui-help-eng-tit{
+  font-size: 14px;
+  top: 60%;
+}

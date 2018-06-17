@@ -49,8 +49,6 @@ Page({
       btn1Class: !index ?"btn-check":"btn-normal",
       btn2Class: !!index ? "btn-check" : "btn-normal",
     })
-
-
   },
    changeIndex:function(){
      console.log('==changeIndex--', this.data)

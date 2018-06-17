@@ -13,7 +13,7 @@
     <view class="{{item.cls}}" bindtap='goOtherPage' data-userId='{{wx_id}}' data-index="{{idx}}">
       <image class='img' src='{{item.img}}'></image>
       <view class='ui-user-item'>{{item.name}}</view>
-      <image class='arrow' src='../../static/user_icon/arrow.png'></image>
+      <image class='arrow' src='../../static/user_icon/arrow.jpg'></image>
     </view>      
   </view>
     

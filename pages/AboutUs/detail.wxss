@@ -1,0 +1,4 @@
+/* pages/AboutUs/detail.wxss */
+page{
+  background: white;
+}

@@ -7,6 +7,11 @@ Page({
     longitude: '',
     textData: {}
   },
+  doRecord:function(e){
+    wx.navigateTo({
+      url: "../DoRecord/doRecord?place=" + this.data.textData.desc,
+    })
+  },
   makertap: function (e) {
     var id = e.markerId;
     var that = this;

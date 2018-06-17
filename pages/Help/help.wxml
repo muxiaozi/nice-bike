@@ -1,0 +1,16 @@
+<view class='ui-help'>
+ <view wx:for="{{list}}" wx:for-index="idx" wx:key='idx' wx:for-item="item" >
+    <view class='ui-help-item'>
+      <view class='{{item[0].cls}}' bindtap='goPage'>
+        <image src='{{item[0].img}}'></image>
+        <view class='ui-help-tit'>{{item[0].tit}}</view>
+        <view class='ui-help-eng-tit'>{{item[0].engTit}}</view>
+      </view>
+      <view class='{{item[1].cls}}' bindtap='goPage'>
+        <image src='{{item[1].img}}'></image>
+        <view class='ui-help-tit'>{{item[1].tit}}</view>
+        <view class='ui-help-eng-tit'>{{item[1].engTit}}</view>
+      </view>
+    </view>
+  </view>
+</view>

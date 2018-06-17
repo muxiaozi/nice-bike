@@ -1,0 +1,61 @@
+page{
+  padding-top: 30rpx;
+}
+.ui-record-images{
+   display: flex;
+  flex-wrap: wrap;
+  min-height: 230rpx;
+  background: #fff;
+  padding: 20rpx;
+}
+image, .upload{
+  width: 230rpx;
+  height: 230rpx;
+  margin-right: 5rpx;
+}
+.ui-record-bottom{
+  background: #fff;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+}
+.check-box{
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 10rpx;
+  border: 1px solid #ccc;
+  margin:0 20rpx 20rpx;
+  }
+  .ui-record-textarea{
+    height: 170rpx;
+    border-radius: 10rpx;
+    border: 1px solid #ccc;
+    width: auto;
+    margin:0 20rpx;
+  }
+  .ui-record-place{
+    color: #ccc;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 12px;
+    padding-left: 20rpx;
+    display: flex;
+    align-items: center;
+  }
+  .ui-d-r-img{
+    width: 24rpx;
+    height: 29rpx;
+    flex-grow: 0;
+  }
+  .ui-d-r-p{
+    flex-grow: 1;
+  }
+  .ui-d-r-btn{
+    width: 478rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin: 45rpx auto;
+    background: linear-gradient(#05e1c9 0%, #15e68b 100%);
+    text-align: center;
+    color: #fff;
+    border-radius:40rpx;
+  }

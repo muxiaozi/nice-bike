@@ -1,0 +1,18 @@
+<!--pages/Help/detail.wxml-->
+<view class='ui-help-detail'>
+   <view wx:for="{{list}}" wx:for-index="idx" wx:key='idx' wx:for-item="item" >
+    <view class='ui-help-detail-item'>
+      <text class='ui-help-detail-text'>{{item.tit}}</text>
+      <view class='ui-help-detail-imgs'>        
+         <view wx:for="{{item.img}}" wx:for-index="imgIndex" wx:key='imgIndex' wx:for-item="imgItem" >
+          <image src='{{imgItem}}'></image>
+         </view>
+         <image class='upload' src='../../static/help_icon/upload.jpg' bindtap='uploadImg' data-idx='{{idx}}' />
+      </view>
+    </view>
+   </view>
+   <view  class='ui-help-btns'>
+      <button bindtap='saveHelp'>确认提交</button>
+      <button class='ui-help-cancel' bindtap='cancelHelp'>取消</button>
+    </view>
+</view>

@@ -1,0 +1,46 @@
+/* pages/Help/detail.wxss */
+.ui-help-detail{
+ background: #ededed;
+ height:100%;
+ padding-top: 30rpx;
+}
+.ui-help-detail-item{
+  min-height: 357rpx;
+  padding: 30rpx  20rpx;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+.ui-help-detail-text{
+  height: 127rpx;
+  line-height: 127rpx;
+}
+.ui-help-btns{
+  background: #fff;
+  padding: 30rpx 0 50rpx 0;
+}
+button{
+  width: 478rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 45rpx auto;
+  background: linear-gradient(#05e1c9 0%, #15e68b 100%);
+  text-align: center;
+  color: #fff;
+  border-radius:10rpx;
+}
+.ui-help-cancel{
+  background: #fff;
+  border: 1px solid #15e68b;
+  color: #15e68b;
+}
+.ui-help-detail-imgs{
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 230rpx;
+}
+image, .upload{
+  width: 230rpx;
+  height: 230rpx;
+  margin-right: 5rpx;
+}

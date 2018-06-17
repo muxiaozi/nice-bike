@@ -48,8 +48,6 @@ Page({
       btn1Class: !index ?"btn-check":"btn-normal",
       btn2Class: !!index ? "btn-check" : "btn-normal",
     })
-
-
   },
   showMedalPop:function(){
     console.log('==showMedalPop--', this.data)
@@ -58,7 +56,7 @@ Page({
     }) 
    },
    backMedal: function(){
-     console.log('===backMedal--getCurrentPages-', wx.getCurrentPages())
-     wx.navigateBack(); 
+     console.log('===backMedal--getCurrentPages-', getCurrentPages())
+     wx.navigateBack({ delta: 1}); 
    }
 })

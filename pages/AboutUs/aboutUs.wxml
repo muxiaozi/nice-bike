@@ -2,7 +2,7 @@
       <view wx:for="{{list}}" wx:for-index="idx" wx:key='idx' wx:for-item="item" >
         <view class='ui-about-us-item' bindtap='bindViewTap' data-id="{{item.id}}">
           <view class='ui-about-us-item-view'>{{idx+1}}. {{item.title}}</view>
-          <image class='ui-about-us-item-arrow' src='../../static/user_icon/arrow.png'></image>
+          <image class='ui-about-us-item-arrow' src='../../static/user_icon/arrow.jpg'></image>
         </view>
         
       </view>
