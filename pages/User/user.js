@@ -40,7 +40,7 @@ Page({
     var dataSet = event.currentTarget.dataset,
       whichPage = {
         0:"../Medal/medal",
-        1:"../Record/record?index=0",
+        1:"../RecordList/record?index=0",
         2:"../CustomerCenter/customerCenter",
         3:"../AboutUs/aboutUs",
         4:"../FeedBack/feedBack"};

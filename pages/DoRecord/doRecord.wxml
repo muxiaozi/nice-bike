@@ -1,16 +1,19 @@
 <view class='ui-record-images'>        
-  <view wx:for="{{item.img}}" wx:for-index="imgIndex" wx:key='imgIndex' wx:for-item="imgItem" >
+  <view wx:for="{{imgs}}" wx:for-index="imgIndex" wx:key='imgIndex' wx:for-item="imgItem" >
     <image src='{{imgItem}}'></image>
   </view>
   <image class='upload' src='../../static/help_icon/upload.jpg' bindtap='uploadImg' data-idx='{{idx}}' />
 </view>
 <view class='ui-record-bottom'>
-  <view class='check-box'></view>
-  <textarea class='ui-record-textarea' />
+  <view class='check-box' bindtap='showReason'>
+  <text>{{reasons[reason]}}</text>
+  <image class='ui-d-r-down' src='../../static/map_icon/down.png'></image>
+  </view>
+  <textarea bindinput='saveText' class='ui-record-textarea' placeholder='备注：' />
   <view class='ui-record-place'>
     <image src='../../static/map_icon/place.png' class='ui-d-r-img'></image>
     <view class='ui-d-r-p'>{{place}}</view>
   </view>
 </view>
-<button class='ui-d-r-btn'>确认上传</button>
+<button class='ui-d-r-btn' bindtap='submitQ'>确认上传</button>
 

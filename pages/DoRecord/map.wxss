@@ -1,7 +1,7 @@
 .map_container{
   position: absolute;
   top: 0;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
   right: 0;
 }
@@ -10,12 +10,20 @@
   height: 100%;
 }
 .ui-do-record{
-  position: absolute;
-  height: 100rpx;
-  background: #fff;
-  border-radius: 90% 90% 0 0;
+  position: absolute; 
+  background:transparent;
   bottom: 0;
   left: 0;
+  height: 250rpx;
+  width: 100%;
+  overflow:visible;
+}
+.ui-do-record-v{
+ border-radius: 90% 90% 0rpx 0rpx;
+   background: #fff;
+   height: 100rpx;
+     position: absolute;
+  bottom: 0;
   width: 100%;
 }
 .ui-do-record-text{
@@ -24,12 +32,25 @@
   bottom: 10rpx;
   width: 100%;
   text-align: center;
+   
 } 
-image{
+.cover-i1{
   width: 186rpx;
   height: 186rpx;
   position: absolute;
-  top: -135rpx;
+  bottom: 50rpx;
   left: 50%;
   transform: translate(-50%, 0);
 }
+ 
+  .ui-share-img{
+  width: 80rpx;
+  height: 80rpx;
+  position:absolute;
+  top: 40%;
+  left: 85%;
+  }
+  .cover_view{
+    width: 100%;
+    height: 100%;
+  }

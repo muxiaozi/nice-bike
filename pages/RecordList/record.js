@@ -42,8 +42,6 @@ Page({
   onLoad: function (options) {
     var that = this;
     var index = parseInt(options.index);
-      console.log('onLoad==record--options--', options, !options.index ? "btn-check" : "btn-normal"
-        , !!options.index ? "btn-check" : "btn-normal", index)
     this.setData({
       index: index,
       btn1Class: !index ?"btn-check":"btn-normal",
@@ -51,7 +49,6 @@ Page({
     })
   },
    changeIndex:function(){
-     console.log('==changeIndex--', this.data)
      this.setData({
        index: !this.data.index,
        btn1Class: !!this.data.index ? "btn-check" : "btn-normal",
@@ -59,9 +56,8 @@ Page({
      })
    },
    goRecordDetail:function(event){
-     console.log('==goRecordDetail==event.currentTarget.dataset.id', event.currentTarget.dataset.id,)
      wx.navigateTo({
-       url: '../Record/recordDetail?id=' + event.currentTarget.dataset.id,
+       url: '../RecordList/recordDetail?id=' + event.currentTarget.dataset.id,
      })
    },
    goAccumulateDetail: function (event) {

@@ -18,6 +18,28 @@ Page({
     that.showMarkerInfo(markersData, id);
     that.changeMarkerColor(markersData, id);
   },
+  sharePB:function(){
+    console.log('==sharePB==',Page.onShareAppMessage)
+  },
+  onShareAppMessage: function (res) {
+    console.log('=onShareAppMessage===res', res)
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '公益单车',
+      path: '/page/user?id=123',
+      success: function (res) {
+        // 转发成功
+        console.log('===1===res==',res)
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log('===2===res==', res)
+      }
+    }
+  },
   onLoad: function () {
     var that = this;
     var myAmapFun = new amapFile.AMapWX({ key: '3511d4db187cf871453767e4aea419c9' });

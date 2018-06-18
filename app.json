@@ -1,13 +1,13 @@
 {
-  "pages":[
+  "pages":[      
     "pages/DoRecord/map",
     "pages/DoRecord/doRecord",
     "pages/DoRecord/doRecordOk",
     "pages/RecordList/record",
+    "pages/RecordList/recordDetail",
     "pages/Help/detail",
     "pages/Help/help",    
-    "pages/User/user",       
-    "pages/RecordList/recordDetail",
+    "pages/User/user",           
     "pages/AboutUs/aboutUs",
     "pages/AboutUs/detail",
     "pages/CustomerCenter/customerCenter",

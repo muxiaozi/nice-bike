@@ -1,2 +1,13 @@
-<!--pages/DoRecord/doRecordOk.wxml-->
-<text>pages/DoRecord/doRecordOk.wxml</text>
+<view class='ui-ok-v1'>
+  <image class='ok-img' src='../../static/map_icon/ok.png'></image>
+  <text class='ok-text'>记录完成</text>
+  <text class='ok-int'>{{text}}</text>
+</view>
+<view class='ok-btn'>
+  <button bindtap='goBack'>返回主界面</button>
+  <button bindtap='goInt'  data-userid=''>查看我的积分</button>
+</view>
+<view class='ui-ok-v2'>
+  <image class='ok-ad' src='../../static/map_icon/ad.jpg'></image>
+</view>
+

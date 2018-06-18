@@ -1,6 +1,5 @@
 //app.js
 App({
-  //onLanuch 当小程序初始化完成时，会触发，全局只触发一次
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

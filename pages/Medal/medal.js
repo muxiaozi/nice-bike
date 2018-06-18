@@ -41,8 +41,6 @@ Page({
   onLoad: function (options) {
     var that = this;
     var index = parseInt(options.index);
-      console.log('onLoad==record--options--', options, !options.index ? "btn-check" : "btn-normal"
-        , !!options.index ? "btn-check" : "btn-normal", index)
     this.setData({
       index: index,
       btn1Class: !index ?"btn-check":"btn-normal",
@@ -50,13 +48,11 @@ Page({
     })
   },
   showMedalPop:function(){
-    console.log('==showMedalPop--', this.data)
     this.setData({
       hiddenmodal: !this.data.hiddenmodal
     }) 
    },
    backMedal: function(){
-     console.log('===backMedal--getCurrentPages-', getCurrentPages())
      wx.navigateBack({ delta: 1}); 
    }
 })

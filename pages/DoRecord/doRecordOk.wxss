@@ -1,0 +1,43 @@
+page{
+  padding-top: 30rpx;
+}
+.ui-ok-v1{
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ok-img{
+  margin: 60rpx 0 27rpx 0;
+  width: 160rpx;
+  height: 160rpx;
+}
+.ok-text{
+  color: #15e68a;
+}
+.ok-int{
+  color: #333;
+  margin: 30rpx 0 65rpx 0;
+}
+.ok-btn{
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding-bottom: 40rpx;
+}
+button{
+  flex-grow: 0;
+  background: #fff;
+  color: #4decb2;
+  border: 1px solid #11e598;
+  border-radius: 25rpx;
+}
+.ui-ok-v2{
+  height: 100%;
+  background: #fff;
+  margin-top: 30rpx;
+}
+.ok-ad{  
+  height: 240rpx;
+  width: 100%;
+}

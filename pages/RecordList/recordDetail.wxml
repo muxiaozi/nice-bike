@@ -1,6 +1,6 @@
 <view class="record-detail-container">
    <swiper indicator-dots="true" autoplay="false" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{images}}" wx-key='{{idx}}'>
+  <block wx:for="{{images}}" wx:key='{{idx}}' wx:for-index="idx">
     <swiper-item  wx-key='{{idx}}'>
       <image src="{{item}}" class="slide-image" width="355" height="150"/>
     </swiper-item>

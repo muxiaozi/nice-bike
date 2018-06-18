@@ -24,13 +24,27 @@ image, .upload{
   border-radius: 10rpx;
   border: 1px solid #ccc;
   margin:0 20rpx 20rpx;
+  display: flex;
+  align-items: center;
+  }
+  text{
+    font-size: 16px;
+    flex-grow: 1;
+    text-align:center;
+  }
+  .ui-d-r-down{
+    width: 20rpx;
+    height: 13rpx;
+    margin-right: 52rpx;
   }
   .ui-record-textarea{
-    height: 170rpx;
+    height: 170px;
     border-radius: 10rpx;
     border: 1px solid #ccc;
     width: auto;
     margin:0 20rpx;
+    padding:10rpx;
+    font-size: 16px;
   }
   .ui-record-place{
     color: #ccc;
