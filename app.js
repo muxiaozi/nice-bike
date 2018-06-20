@@ -10,17 +10,43 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log('===wx.login==',res)
       }
     })
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        console.log('===wx.getSetting==', res)
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              console.log('===wx.getUserInfo==', res)
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
+              wx.request({
+                url: this.globalData.remoteUrl,
+                //这里是 
+                data: {
+                  name: res.userInfo.nickName,
+                  avatar_url: res.userInfo.avatarUrl,
+                  wx_id:'sdfsf'
+                },
+                method: "POST",
+                header: {
+                  'content-type': 'application/json'
+                },
+                fail: function (msg) {
+                  console.log('==fail===msg', msg)
+                },
+                success: function (msg) {
+                  console.log('==success===msg', msg)
+                  
+                },
+                complete: function () {
+                  console.log('==complete===msg', )
+                }
+              })
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -50,7 +76,7 @@ App({
   //用来存放一些全局变量，比如说统一的远程接口地址。这些全局变量在pages中可以获取到
   globalData: {
     userInfo: null,
-    remoteUrl:"",//远程接口
+    remoteUrl:"https://api.muxiaozi.cn/bike/users/",//远程接口
     shareTicket:false
   }
 })
