@@ -18,8 +18,10 @@ Page({
     that.showMarkerInfo(markersData, id);
     that.changeMarkerColor(markersData, id);
   },
-  sharePB:function(){
-    console.log('==sharePB==',Page.onShareAppMessage)
+  doShare:function(){
+    console.log('==doShare==',   this.onShareAppMessage);
+    this.onShareAppMessage({
+      from : "menu",target:undefined});
   },
   onShareAppMessage: function (res) {
     console.log('=onShareAppMessage===res', res)

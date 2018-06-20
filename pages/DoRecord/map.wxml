@@ -1,14 +1,11 @@
 <view class="map_container">
   <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap">
-  cover-<cover-view class='ui-do-record'>
-    
-    <cover-view class='ui-do-record-v'>
-    <cover-view class='ui-do-record-text'>{{textData.desc}}</cover-view>
-  </cover-view>
+  <cover-view class='ui-do-record'>
+    <cover-image class='ui-do-record-v' src='../../static/map_icon/bottom.png' />
+  <cover-view class='ui-do-record-text'>{{textData.desc}}</cover-view>
   <cover-image class='cover-i1' src='../../static/map_icon/do.png' bindtap='doRecord'/>
-    </cover-view>
-    
-  <cover-image class='ui-share-img' src='../../static/map_icon/share.png' /> 
+  </cover-view>
+    <cover-image class='ui-share-img'  bindtap='doShare' src='../../static/map_icon/share.png' /> 
   </map>
 </view>
  

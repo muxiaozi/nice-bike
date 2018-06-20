@@ -19,10 +19,9 @@
   overflow:visible;
 }
 .ui-do-record-v{
- border-radius: 90% 90% 0rpx 0rpx;
-   background: #fff;
-   height: 100rpx;
-     position: absolute;
+  background: transparent;
+  height: 100rpx;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
@@ -42,13 +41,13 @@
   left: 50%;
   transform: translate(-50%, 0);
 }
- 
+
   .ui-share-img{
-  width: 80rpx;
-  height: 80rpx;
-  position:absolute;
+   position:absolute;
   top: 40%;
   left: 85%;
+  width: 80rpx;
+  height: 80rpx
   }
   .cover_view{
     width: 100%;
