@@ -10,6 +10,19 @@ Page({
   },
   onLoad: function (options){
     var that = this;
+    console.log('app--',app, this)
+    // wx.request({
+    //   url: app.globalData.remoteUrl +':1/position/longitude/latitude',
+    //   method:"GET",
+    //   header: {
+    //     'content-type': 'application/json'
+    //   },
+    //   fail: app.commonFail,
+    //   success: function (msg) {
+    //     console.log('==success===msg', msg)
+
+    //   }
+    // })
     that.setData({
       place: options.place,
     })

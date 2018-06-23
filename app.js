@@ -11,6 +11,23 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log('===wx.login==',res)
+        wx.request({
+          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wxc55405d40b934b51' + '&secret=0d8635d5e70e385c3dbff51f0ce557ca' + '&js_code=' + res.code +'&grant_type=authorization_code',
+          method: "GET",
+          header: {
+            'content-type': 'application/json'
+          },
+          fail: function (msg) {
+            console.log('==fail===msg', msg)
+          },
+          success: function (msg) {
+            console.log('==success===msg', msg)
+
+          },
+          complete: function () {
+            console.log('==complete===msg', )
+          }
+        })
       }
     })
     // 获取用户信息
@@ -24,6 +41,7 @@ App({
               console.log('===wx.getUserInfo==', res)
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
+              
               wx.request({
                 url: this.globalData.remoteUrl,
                 //这里是 
@@ -59,19 +77,10 @@ App({
       }
     })
   },
-  //onShow 当小程序启动，或从后台进入前台展示，触发
-  //前台 后台： 点击左上角关闭小程序 或者 按Home键退出微信时，此时小程序不是真正的销毁，
-  //而是进入后台模式运行，当再次打开，是进入前台运行而不是重新启动
-  onShow:function(){
-
-  },
-  //onHide 当小程序从前台进入后台 触发
-  onHide: function () {
-
-  },
-  //onError 当小程序发生脚本错误，或者API调用失败时，触发 饼带上错误信息
-  onError: function () {
-
+  commonFail:function(msg){
+    wx.showToast({
+      title: msg,
+    });
   },
   //用来存放一些全局变量，比如说统一的远程接口地址。这些全局变量在pages中可以获取到
   globalData: {

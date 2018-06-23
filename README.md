@@ -10,6 +10,9 @@
 - [【微信小程序学习笔记】弹窗的两种姿势](https://blog.csdn.net/hantian616/article/details/53097871)
 - [微信小程序 分享功能/客服/扫一扫](https://blog.csdn.net/yelin042/article/details/79022837)
 - [微信小程序的五种跳转方式](https://blog.csdn.net/qq_34500679/article/details/79503680)
+- [微信小程序授权获取用户详细信息openid](https://blog.csdn.net/qq_34827048/article/details/77990510)
+
+
 
 ### 联系方式
 微信小程序前端若有疑问可联系邮箱 m18749679912@163.com，题目请注明公益单车
