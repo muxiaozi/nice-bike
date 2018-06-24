@@ -7,14 +7,14 @@ const config = {
     // 生产环境
     production: {
         mongo: {
-            uri: 'mongodb://muxiaozi.cn:27017'
+            uri: 'mongodb://muxiaozi.cn:27017/nice-bike'
         }
     },
 
     // 开发环境
     development: {
         mongo: {
-            uri: 'mongodb://127.0.0.1:27017'
+            uri: 'mongodb://localhost:27017/nice-bike'
         }
     }
 }
