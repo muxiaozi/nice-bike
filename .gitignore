@@ -1,5 +1,5 @@
 /node_modules
-.jpg
-.png
-.jpeg
-.gif
+*.jpg
+*.png
+*.jpeg
+*.gif

@@ -18,12 +18,6 @@ app.use(Serve(path.join(__dirname, '/static')));
 //解析请求体
 app.use(BodyParser());
 
-app.use(async (ctx, next) => {
-    console.log(ctx.request);
-    await next();
-
-})
-
 //拦截错误
 app.use(exception);
 
