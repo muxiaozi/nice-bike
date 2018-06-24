@@ -1,6 +1,7 @@
 const router = require('koa-router')();
 const User = require('../controller/user');
 const Help = require('../controller/help');
+const uploader = require('../middleware/uploader');
 
 router
     .get('/users', User.find)
@@ -12,6 +13,8 @@ router
     .get('/users/:user_id/badge', User.getBadge)
     .put('/users/:user_id/badge', User.convertBadge)
 
+    .post('/users/:user_id/avatar', uploader.single('avatar'), User.uploadAvatar)
+
     .get('/users/:user_id/position/longitude/latitude', User.aroundPosition)
     .get('/users/:user_id/records', User.getRecords)
     .get('/users/:user_id/records/:record_id', User.getRecord)
@@ -21,6 +24,8 @@ router
     .get('/help/:help_id', Help.findId)
     .post('/help', Help.add)
     .put('/help/:help_id', Help.update)
+
+
 
 
 module.exports = router;

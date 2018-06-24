@@ -63,6 +63,20 @@ module.exports = class User {
         await next();
     }
 
+    static async uploadAvatar(ctx, next) {
+        let user_id = ctx.params.user_id;
+        if (ctx.req.file) {
+            await UserModel.findByIdAndUpdate(user_id, {
+                $set: {
+                    avatar_url: ctx.req.file.filename
+                }
+            }).then(user => {
+                ctx.body = user;
+            }).catch(err => ctx.throw(400, err));
+        }
+        await next();
+    }
+
     /**
      * 获取勋章列表
      */

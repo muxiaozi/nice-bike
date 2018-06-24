@@ -11,18 +11,9 @@ const auth = require('./src/middleware/auth');
 const mongodb = require('./src/model/db');
 
 const app = new Koa();
-const uploader = new Multer({
-    dest: path.join(__dirname, 'static/images'),
-    limits: {
-        fileSize: 1024 * 1024
-    }
-})
 
 //静态文件管理
 app.use(Serve(path.join(__dirname, '/static')));
-
-//上传
-app.use(uploader.single('avatar'));
 
 //解析请求体
 app.use(BodyParser());
@@ -30,7 +21,7 @@ app.use(BodyParser());
 app.use(async (ctx, next) => {
     console.log(ctx.request);
     await next();
-    
+
 })
 
 //拦截错误
