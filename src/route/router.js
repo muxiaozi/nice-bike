@@ -2,6 +2,7 @@ const router = require('koa-router')();
 const User = require('../controller/user');
 const Help = require('../controller/help');
 const uploader = require('../middleware/uploader');
+const WeChat = require('../controller/wechat');
 
 router
     .get('/users', User.find)
@@ -24,6 +25,8 @@ router
     .get('/help/:help_id', Help.findId)
     .post('/help', Help.add)
     .put('/help/:help_id', Help.update)
+
+    .get('/wx/session', WeChat.jscode2session)
 
 
 
